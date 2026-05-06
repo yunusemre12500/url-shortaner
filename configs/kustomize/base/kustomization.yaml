@@ -1,4 +1,4 @@
-apiVersion: ku  stomize.config.k8s.io/v1beta1
+apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 configMapGenerator:
   - behavior: create
@@ -9,3 +9,4 @@ configMapGenerator:
 resources:
   - deployment.yaml
   - service.yaml
+namePrefix: url-shortaner-

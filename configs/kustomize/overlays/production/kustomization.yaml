@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
   - name: ghcr.io/yunusemre12500/url-shortaner/api-server
-    newTag: 0.1.0@sha256:xxx
+    newTag: 0.1.0@sha256:bf37658b40c26924b2252541f03c98d5697f6914eb0258a239e859c0305a73ce
 labels:
   - pairs:
       app.kubernetes.io/version: 0.1.0
@@ -18,4 +18,4 @@ replicas:
   - name: api-server
     count: 3
 resources:
-  - ../../development
+  - ../development
