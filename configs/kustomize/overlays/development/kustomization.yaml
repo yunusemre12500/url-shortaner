@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+buildMetadata:
+  - managedByLabel
+images:
+  - name: ghcr.io/yunusemre12500/url-shortaner/api-server
+    newTag: latest
+labels:
+  - includeSelectors: true
+    includeTemplates: true
+    pairs:
+      app.kubernetes.io/component: api-server
+      app.kubernetes.io/instance: api-server
+      app.kubernetes.io/name: api-server
+      app.kubernetes.io/part-of: url-shortaner
+  - pairs:
+      app.kubernetes.io/version: latest
+namespace: development
+resources:
+  - ../../base

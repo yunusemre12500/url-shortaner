@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+  - name: ghcr.io/yunusemre12500/url-shortaner/api-server
+    newTag: 0.1.0@sha256:xxx
+labels:
+  - pairs:
+      app.kubernetes.io/version: 0.1.0
+namespace: production
+patches:
+  - target:
+      group: apps
+      kind: Deployment
+      name: api-server
+      version: v1
+    path: patches/deployment.yaml
+replicas:
+  - name: api-server
+    count: 3
+resources:
+  - ../../development

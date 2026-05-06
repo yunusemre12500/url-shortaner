@@ -1,0 +1,9 @@
+configs/
+migrations/
+.dockerignore
+.editorconfig
+.gitattributes
+.gitignore
+compose.yaml
+Dockerfile
+Makefile

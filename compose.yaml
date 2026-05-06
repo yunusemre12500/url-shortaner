@@ -1,0 +1,22 @@
+services:
+  adminer:
+    image: adminer:5.4.2
+    ports:
+      - 8080:8080
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - 4317:4317
+      - 16686:16686
+  postgres:
+    environment:
+      PGDATA: /var/lib/postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    image: postgres:18.3-alpine3.23
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgres
+volumes:
+  postgres:
