@@ -76,6 +76,6 @@ spec:
       volumes:
         - name: secrets
           secret:
-            secretName: api-server-secrets
+            secretName: url-shortaner-api-server-secrets
             defaultMode: 0440
             optional: false
